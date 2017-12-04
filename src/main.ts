@@ -9,6 +9,8 @@ import './cambodia/cambodia';
 import * as $ from 'jquery';
 import * as Masonry from 'masonry-layout';
 
+let engaged = false;
+
 $(document).ready(() => {
     let el = document.getElementsByClassName('grid');
     for (let i = 0; i < el.length; i++) {
@@ -50,6 +52,19 @@ $(document).ready(() => {
 
     $('.graphic .overlay').click(function () {
         $(this).fadeOut();
+        if (!engaged) {
+            $('.reveal').slideDown();
+            engaged = true;
+        }
     });
+
+    $('#yes').click(() => {
+        $('.graphic .overlay').fadeOut();
+        $('.reveal').slideUp();
+    });
+
+    $('#no').click(() => {
+        $('.reveal').slideUp();
+    })
 
 });

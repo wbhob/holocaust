@@ -16,7 +16,7 @@ section:not(.masonry) {
 .grid {
     margin-top: 20vh;
     padding-bottom: 100vh;
-    background:black;
+    background: black;
 }
 
 section.description {
@@ -41,6 +41,22 @@ section.description {
 
 .hero h1 {
     font-family: 'Archivo Black', sans-serif;
+}
+
+.reveal {
+    display: none;
+    padding: 20px;
+    position: fixed;
+    z-index: 20;
+    background-color: black;
+    color: white;
+    width: 100vw;
+    p {
+        margin: 0;
+    }
+    .btn {
+        cursor: pointer;
+    }
 }
 
 $headings-font-family: 'Playfair Display',
