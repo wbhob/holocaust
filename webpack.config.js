@@ -2,8 +2,8 @@ const webpack = require('webpack');
 const path = require('path');
 
 function getPlugin() {
-    if(process.env.NODE_ENV === 'production') {
-       return [
+    if (process.env.NODE_ENV === 'production') {
+        return [
             new webpack.optimize.UglifyJsPlugin()
         ];
     } else {
@@ -19,37 +19,63 @@ config = {
     },
     output: {
         filename: '[name].js',
-        path: path.resolve(__dirname, './dist/')
+        path: path.resolve(__dirname, './dist/'),
+        publicPath: path.resolve(__dirname, './dist/'),
     },
     resolve: {
         // Add '.ts' and '.tsx' as a resolvable extension.
-        extensions:['.ts', '.tsx', '.js'],
+        extensions: ['.ts', '.js'],
         alias: {
-
+            'masonry-layout': '../node_modules/masonry-layout/masonry.js'
         }
     },
     module: {
         rules: [
             {
                 test: /\.scss$/,
-                use: [
-                    'style-loader',
-                    {
-                        loader: 'css-loader',
-                        options: { 
-                            minimize: true
+                use: [{
+                    loader: 'style-loader', // inject CSS to page
+                }, {
+                    loader: 'css-loader', // translates CSS into CommonJS modules
+                }, {
+                    loader: 'postcss-loader', // Run post css actions
+                    options: {
+                        plugins: function () { // post css plugins, can be exported to postcss.config.js
+                            return [
+                                require('precss'),
+                                require('autoprefixer')
+                            ];
                         }
-                    },
+                    }
+                }, {
+                    loader: 'sass-loader' // compiles SASS to CSS
+                },
                     'sass-loader?sourceMap'
                 ]
             },
-            {   
-                test: /\.tsx?$/,
+            {
+                test: /\.ts$/,
                 use: 'ts-loader'
-            }
+            }, {
+                test: /\.(jpg|png|svg)$/,
+                use: {
+                    loader: "url-loader",
+                    options: {
+                        limit: 25000,
+                    },
+                },
+            },
         ]
     },
-    plugins: getPlugin()
+    plugins: [
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery',
+            Popper: ['popper.js', 'default']
+        }),
+        ...getPlugin()
+    ]
 };
 
 module.exports = config;

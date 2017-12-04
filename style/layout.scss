@@ -1,6 +1,54 @@
-@import 'module1/index';
-
+@import 'first-hero/index';
+@import 'intro-to-genocide/index';
+@import './graphic.scss';
+@import 'armenia/index';
+@import 'holocaust/index';
+@import 'cambodia/index';
 body {
-    margin:0;
-    padding: 0;
+    overflow: scroll;
+    overflow-x: hidden;
 }
+
+section:not(.masonry) {
+    min-height: 100vh;
+}
+
+.grid {
+    margin-top: 20vh;
+    padding-bottom: 100vh;
+    background:black;
+}
+
+section.description {
+    h4 {
+        margin-top: 20px;
+        text-align: center !important;
+        font-weight: 700;
+    }
+    h2 {
+        font-weight: 700;
+        font-size: 3em;
+        text-align: center !important;
+    }
+    div.container {
+        margin-top: 25%;
+        height: 50%;
+        .row {
+            vertical-align: middle;
+        }
+    }
+}
+
+.hero h1 {
+    font-family: 'Archivo Black', sans-serif;
+}
+
+$headings-font-family: 'Playfair Display',
+serif;
+$font-family-sans-serif: 'Open Sans',
+sans-serif,
+!default;
+$font-family-serif: 'Merriweather',
+serif !default;
+$font-family-base: $font-family-serif !default;
+@import '~bootstrap/scss/bootstrap.scss';

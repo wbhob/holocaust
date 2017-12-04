@@ -1,5 +1,24 @@
 {
   "compilerOptions": {
-    "moduleResolution": "node"
-  }
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "target": "es5",
+    "declaration": false,
+    "emitDecoratorMetadata": true,
+    "baseUrl": "./src",
+    "rootDir": ".",
+    "experimentalDecorators": true,
+    "noLib": false,
+    "suppressImplicitAnyIndexErrors": true,
+    "lib": [
+      "dom",
+      "es6"
+    ],
+    "typeRoots": [
+      "node_modules/@types"
+    ]
+  },
+  "exclude": [
+    "node_modules"
+  ]
 }
