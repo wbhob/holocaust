@@ -5,9 +5,17 @@ import './first-hero/first-hero';
 import './armenia/armenia';
 import './holocaust/holocaust';
 import './cambodia/cambodia';
+import './rwanda/rwanda';
+import './snowstorm';
 
 import * as $ from 'jquery';
 import * as Masonry from 'masonry-layout';
+
+let snowStorm = window['snowStorm'];
+snowStorm.followMouse = false;
+snowStorm.usePositionFixed = true;
+snowStorm.vMaxX = 4;
+snowStorm.vMaxY = 4;
 
 let engaged = false;
 
