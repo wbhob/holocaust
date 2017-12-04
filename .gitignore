@@ -2,4 +2,3 @@
 .DS_STORE
 yarn-error.log
 yarn.lock
-/dist
