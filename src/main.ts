@@ -6,6 +6,8 @@ import './armenia/armenia';
 import './holocaust/holocaust';
 import './cambodia/cambodia';
 import './rwanda/rwanda';
+import './bosnia/bosnia';
+import './last-hero';
 import './snowstorm';
 
 import * as $ from 'jquery';

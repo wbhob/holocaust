@@ -19,8 +19,8 @@ config = {
     },
     output: {
         filename: '[name].js',
-        path: path.resolve('./dist/'),
-        publicPath: path.resolve('./dist/'),
+        path: path.resolve(__dirname, './dist/'),
+        publicPath: 'dist/',
     },
     resolve: {
         // Add '.ts' and '.tsx' as a resolvable extension.

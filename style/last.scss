@@ -1,0 +1,26 @@
+.last-hero {
+    background-color: black;
+    height: 3000px;
+    margin-top: -20px;
+    h1 {
+        z-index: 80;
+        color: white;
+        position: fixed;
+        /* Fallback: assume this color ON TOP of image */
+        background: url('../assets/images/jace-grandinetti-118900.jpg');
+        -webkit-background-clip: text;
+        font-weight: 900;
+        font-size: 30vh;
+        -webkit-text-fill-color: transparent;
+        text-align: center;
+        background-attachment: fixed;
+        background-position: 50% 50%;
+        top: 15%;
+        width: 100vw;
+    }
+}
+
+ul.items {
+    list-style: none;
+    color: white;
+}

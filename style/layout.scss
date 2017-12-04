@@ -5,6 +5,8 @@
 @import 'holocaust/index';
 @import 'cambodia/index';
 @import 'rwanda/index';
+@import 'bosnia/index';
+@import './last.scss';
 body {
     overflow: scroll;
     overflow-x: hidden;
@@ -40,7 +42,8 @@ section.description {
     }
 }
 
-.hero h1 {
+.hero h1,
+.last-hero h1 {
     font-family: 'Archivo Black', sans-serif;
 }
 
